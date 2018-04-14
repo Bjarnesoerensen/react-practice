@@ -1,12 +1,19 @@
 import React from "react";
+import { setTimeout } from "timers";
 
 export class Home extends React.Component {
   constructor(props) {
     super();
     this.state = {
       age: props.initialAge,
-      status: 0
+      status: 0,
+      homeLink: "Changed Link"
     };
+    setTimeout(() => {
+      this.setState({
+        status: "Jeff"
+      });
+    }, 3000);
   }
   onMakeOlder(event) {
     this.setState({
@@ -14,6 +21,9 @@ export class Home extends React.Component {
     });
   }
 
+  onChangeLink() {
+    this.props.changeLink(this.state.homeLink);
+  }
   render() {
     return (
       <div>
@@ -29,6 +39,15 @@ export class Home extends React.Component {
         >
           Make me older
         </button>
+        <hr />
+        <button onClick={this.props.greet} className="btn btn-danger">
+          Greet
+        </button>
+        <hr />
+        <button onClick={this.onChangeLink.bind(this)} className="btn btn-info">
+          {" "}
+          Change Link
+        </button>
       </div>
     );
   }
@@ -38,4 +57,5 @@ export class Home extends React.Component {
 //    name: React.propTypes.string,
 //    age: React.propTypes.number,
 //    user: React.propTypes.object
+//    greet: React.PropTypes.func
 //  };
