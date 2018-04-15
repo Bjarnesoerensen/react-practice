@@ -1,8 +1,10 @@
 import React from "react";
 import { render } from "react-dom";
+import { Router, Route, browserHistory } from "react-router";
 
 import { Header } from "./components/Header";
 import { Home } from "./components/Home";
+import { User } from "./components/User";
 
 class App extends React.Component {
   constructor() {
@@ -43,6 +45,10 @@ class App extends React.Component {
     }
     return (
       <div className="container">
+        <Router history={browserHistory}>
+          <Route path={"user"} component={User} />
+          <Route path={"home"} component={Home} />
+        </Router>
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
             <Header homeLink={this.state.homeLink} />
