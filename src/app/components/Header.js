@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 export const Header = props => {
   return (
@@ -7,7 +8,14 @@ export const Header = props => {
         <div className="navbar-nav">
           <ul className="nav-item nav-link">
             <li>
-              <a href="#">{props.homeLink}</a>
+              <Link to={"/home"} activeStyle={{ color: "red" }}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to={"/user/10"} activeClassName={"active"}>
+                User
+              </Link>
             </li>
             <li>
               <a href="#">{props.homeLink}</a>
