@@ -9,7 +9,7 @@ This is a small application with react.js. where I am working with the ***State*
 
 ## Project Info
 
-This projct uses [bootstrap](https://getbootstrap.com) and [fontawsome](https://fontawesome.com/), and ***webpack*** as the ***task-manager***.
+This projct uses [bootstrap](https://getbootstrap.com) as framework, [fontawsome](https://fontawesome.com/) for icons and ***webpack*** as the ***task-manager***.
 
 ## Local Version
 
